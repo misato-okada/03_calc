@@ -1,9 +1,3 @@
-<!-- <?php
-$sum  = $num1 + $num2;
-$diff = $num1 - $num2;
-$pro  = $num1 * $num2; 
-$quo  = $num1 / $num2;
-?> -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
