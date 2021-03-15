@@ -11,16 +11,16 @@ $quo  = $num1 / $num2;
 
 switch ($operator) {
     case 'addition':
-        echo "{$num1} + {$num2} = {$sum} <br>";
+        echo "{$num1} + {$num2} = {$sum}";
         break;
     case 'subtraction':
-        echo "{$num1} - {$num2} = {$diff} <br>";
+        echo "{$num1} - {$num2} = {$diff}";
         break;
     case 'multiplication':
-        echo "{$num1} * {$num2} = {$pro} <br>";
+        echo "{$num1} * {$num2} = {$pro}";
         break;
     case 'division':
-        echo "{$num1} / {$num2} = {$quo} <br>";
+        echo "{$num1} / {$num2} = {$quo}";
         break;
     default:
         echo '正しい演算子を指定して下さい';
