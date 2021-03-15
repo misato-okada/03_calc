@@ -10,9 +10,27 @@
     <h1>計算結果</h1>
     <?php
 
-        echo $_POST['num1'] . $_POST['operator'] . $_POST['num2'] . '=' ;
+    $sum  = $_POST['num1'] + $_POST['num2'];
+    $diff = $_POST['num1'] - $_POST['num2'];
+    $pro  = $_POST['num1'] * $_POST['num2']; 
+    $quo  = $_POST['num1'] / $_POST['num2'];
 
+    switch ($_POST['operator']) {
+        case '+':
+            echo $_POST['num1'] . '+' . $_POST['num2'] . '=' . $sum;
+            break;
+        case '-':
+            echo $_POST['num1'] . '-' . $_POST['num2'] . '=' . $diff;
+            break;
+        case '×':
+            echo $_POST['num1'] . '×' . $_POST['num2'] . '=' . $pro;
+            break;
+        default:
+            echo $_POST['num1'] . '÷' . $_POST['num2'] . '=' . $quo;
+            break;
+    }
     ?>
+    <br><br>
     <a href="calc_form.php">戻る</a>
 </body>
 </html>
