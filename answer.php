@@ -1,14 +1,28 @@
 <?php
-    
-    $num1 = $_POST['num1'];
-    $num2 = $_POST['num2'];
-    $operator = $_POST['operator'];
+    $num1 = '';
+    $num2 = '';
+    $operator = '';
 
-    $sum  = $num1 + $num2;
-    $diff = $num1 - $num2;
-    $pro  = $num1 * $num2; 
-    $quo  = $num1 / $num2;
+    if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+        $num1 = $_POST['num1'];
+        $num2 = $_POST['num2'];
+        $operator = $_POST['operator'];
 
+        switch ($operator) {
+            case '+':
+                $answer  = $num1 + $num2;
+                break;
+            case '-':
+                $answer = $num1 - $num2;
+                break;
+            case '×':
+                $answer  = $num1 * $num2; 
+                break;
+            default:
+                $answer  = $num1 / $num2;
+                break;
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -20,25 +34,7 @@
 </head>
 <body>
     <h1>計算結果</h1>
-    <?php
-    if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-        switch ($operator) {
-            case '+':
-                echo $num1 . '+' . $num2 . '=' . $sum;
-                break;
-            case '-':
-                echo $num1 . '-' . $num2 . '=' . $diff;
-                break;
-            case '×':
-                echo $num1 . '×' . $num2 . '=' . $pro;
-                break;
-            default:
-                echo $num1 . '÷' . $num2 . '=' . $quo;
-                break;
-        }
-    }
-    ?>
-    <br><br>
+    <p><?= $num1 . $operator . $num2 . '=' . $answer; ?></p>
     <a href="calc_form.php">戻る</a>
 </body>
 </html>
